@@ -1,8 +1,9 @@
 class TicTacToe
-  
+ # your #initialize method should set a @board variable equal to a new, empty array  
 def initialize
   @board = [ " ", " "," "," "," "," "," "," "," ",]
 end
+# Define a WIN_COMBINATIONS constant within the TicTacToe class, and set it equal to a nested array filled with the index values for the various winning combinations 
 
   WIN_COMBINATIONS = [
     [0, 1, 2],
@@ -15,6 +16,7 @@ end
     [6, 4, 2]
   ]
 
+# Define a method that prints the current board based on the @board instance variable.
 def display_board
   puts " #{@board[0]} | #{@board[1]} | #{@board[2]} "
   puts "-----------"
@@ -23,10 +25,12 @@ def display_board
   puts " #{@board[6]} | #{@board[7]} | #{@board[8]} "
 end
 
+#input_to_index
 def input_to_index(user_input)
   user_input.to_i - 1
 end
 
+Your #move method must take in two arguments: 
 def move(index, current_player = "X")
   @board[index] = current_player
 end
@@ -139,3 +143,6 @@ def play
 end
 
 end
+
+game = TicTacToe.new
+game.play
